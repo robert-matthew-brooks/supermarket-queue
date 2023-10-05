@@ -4,7 +4,7 @@
   "description": "You are a middle manager in a large supermarket chain, tasked with overseeing the checkout queue.",
   "main": "queue_time.py",
   "scripts": {
-    "start": "python3 run_queue_time.py",
+    "start": "python3 main.py",
     "test": "python3 test_queue_time.py"
   },
   "keywords": [],
