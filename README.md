@@ -1,5 +1,9 @@
 # Supermarket Queue
 
+https://replit.com/@robertmatthewbr/supermarket-queue
+
+## Kata
+
 You are a middle manager in a large supermarket chain, tasked with overseeing the checkout queue.
 
 Every once in a while, your boss radios you to ask how long the current queues will take to process. You take this job seriously, so you've decided to write a function called `queueTime` to solve the problem.
