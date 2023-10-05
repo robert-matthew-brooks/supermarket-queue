@@ -20,5 +20,5 @@ The function takes two arguments:
 
 This projects requires `Python 3` - check on the CLI with `python3 --version`. After cloning the project:
 
-- To run the script: `npm start`
-- To run the test suite: `npm test`
+- To run the script: `python3 main.py` (or press '>Run' on replit.com)
+- To run the test suite: `python3 test_queue_time.py`
