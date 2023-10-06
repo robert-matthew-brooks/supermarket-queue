@@ -5,13 +5,13 @@ def queue_time(customers, number_of_tills):
   elapsed_time = 0
   queue = customers.copy()
   tills = [0] * number_of_tills
-  report(elapsed_time, queue, tills, 'initial setup...')
+  report(elapsed_time, queue, tills, 'initial setup...', True)
 
   # initial assign empty tills
   for i in range(number_of_tills):
     if len(queue):
       tills[i] = shift(queue)
-      report(elapsed_time, queue, tills, 'customer moved to empty till...')
+      report(elapsed_time, queue, tills, 'customer moved to empty till...', True)
 
   # main loop
   while is_not_empty(tills) or len(queue) > 0:
@@ -29,10 +29,10 @@ def queue_time(customers, number_of_tills):
           status = 'time passed...'
     
     if (is_not_empty(tills) == False and len(queue) == 0):
-      report(elapsed_time, queue, tills, 'all customers served...')
+      report(elapsed_time, queue, tills, f'type {colours.YELLOW}python3 main.py{colours.RED} to restart...', False)
       return elapsed_time
     
-    report(elapsed_time, queue, tills, status)
+    report(elapsed_time, queue, tills, status, True)
   
 ##################
 # util functions #
@@ -59,7 +59,7 @@ class colours:
   GREEN = '\033[92m'
   END = '\033[0m'
 
-def report(elapsed_time, queue, tills, status):
+def report(elapsed_time, queue, tills, status, isRunning):
   os.system('clear')
 
   print(f'Status: {colours.RED}{status}{colours.END}')
@@ -97,4 +97,5 @@ def report(elapsed_time, queue, tills, status):
 
   print(timeStr)
   print('')
-  input(f'{colours.GREEN}(press Enter to continue...){colours.END}')
+  if isRunning:
+    input(f'{str(isRunning)}{colours.GREEN}(press Enter to continue...){colours.END}')
