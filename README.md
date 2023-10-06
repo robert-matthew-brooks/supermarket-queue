@@ -26,3 +26,14 @@ This projects requires `Python 3` - check on the CLI with `python3 --version`. A
 
 - To run the script: `python3 main.py` (or press '>Run' on replit.com)
 - To run the test suite: `python3 test_queue_time.py`
+
+Press `Enter` to run with randomly generated customers and tills.
+
+To provide a custom starting state, enter a set of numbers separated by spaces, where **the last number is the number of tills**:
+
+```
+# Press Enter to start: 1 2 3 4 5
+
+customers = [1, 2, 3, 4]
+number_of_tills = 5
+```
