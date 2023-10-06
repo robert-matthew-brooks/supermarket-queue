@@ -62,28 +62,28 @@ class colours:
 def report(elapsed_time, queue, tills, status):
   os.system('clear')
 
-  print('Status: ' + colours.RED + status + colours.END)
+  print(f'Status: {colours.RED}{status}{colours.END}')
   print('')
   print('--------------------')
   print('')
   
   queueStr = 'Q) '
   if len(queue) == 0:
-    queueStr += colours.GREY + ' empty...' + colours.END
+    queueStr += f'{colours.GREY}empty...{colours.END}'
   else:
     for customer in queue:
-      queueStr += colours.YELLOW + '(' + (str(customer)) + ') ' + colours.END
+      queueStr += f'{colours.YELLOW}({str(customer)}) {colours.END}'
 
   print(queueStr)
   print('')
 
   for tillIndex in range(len(tills)):
-    tillStr = str(tillIndex+1) + '] '
+    tillStr = f'{str(tillIndex+1)}] '
 
     if (tills[tillIndex]):
-      tillStr += colours.YELLOW + (tills[tillIndex] * '█') + ' (' + str(tills[tillIndex]) + ') ' + colours.END
+      tillStr += f'{colours.YELLOW}{tills[tillIndex] * chr(9608)} ({str(tills[tillIndex])}){colours.END}'
     else:
-      tillStr += colours.GREY + 'empty...' + colours.END
+      tillStr += f'{colours.GREY}empty...{colours.END}'
 
     print(tillStr)
 
@@ -91,10 +91,10 @@ def report(elapsed_time, queue, tills, status):
 
   timeStr = 'T) '
   if (elapsed_time):
-    timeStr += colours.RED + (elapsed_time * '█') + ' ' + str(elapsed_time) + ' min(s)' + colours.END
+    timeStr += f'{colours.RED}{elapsed_time * chr(9608)} {str(elapsed_time)} min(s){colours.END}'
   else:
-    timeStr += colours.RED + ' 0 min(s)' + colours.END
+    timeStr += f'{colours.RED} 0 min(s){colours.END}'
 
   print(timeStr)
   print('')
-  input(colours.GREEN + '(press Enter to continue...)' + colours.END)
+  input(f'{colours.GREEN}(press Enter to continue...){colours.END}')
