@@ -98,4 +98,4 @@ def report(elapsed_time, queue, tills, status, isRunning):
   print(timeStr)
   print('')
   if isRunning:
-    input(f'{str(isRunning)}{colours.GREEN}(press Enter to continue...){colours.END}')
+    input(f'{colours.GREEN}(press Enter to continue...){colours.END}')
